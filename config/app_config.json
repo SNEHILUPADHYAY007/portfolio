@@ -1,0 +1,77 @@
+{
+  "app": {
+    "logo": "assets/logo.png",
+    "logo_size": "large",
+    "search_placeholder": "Search for skills, projects, or experience:"
+  },
+  "navigation": {
+    "pages": [
+      {
+        "id": "about",
+        "page_file": "views/about_me.py",
+        "title": "About Me",
+        "icon": "👤",
+        "default": true
+      },
+      {
+        "id": "contact",
+        "page_file": "views/contact.py",
+        "title": "Contact Me",
+        "icon": "📞",
+        "default": false
+      },
+      {
+        "id": "projects",
+        "page_file": "views/projects.py",
+        "title": "Projects",
+        "icon": "📁",
+        "default": false
+      },
+      {
+        "id": "skills",
+        "page_file": "views/skills.py",
+        "title": "Skills",
+        "icon": "🛠️",
+        "default": false
+      },
+      {
+        "id": "experience",
+        "page_file": "views/work_experience.py",
+        "title": "Work Experience",
+        "icon": "💼",
+        "default": false
+      }
+    ],
+    "structure": {
+      "OVERVIEW": [
+        "about",
+        "skills"
+      ],
+      "WORK": [
+        "projects",
+        "experience"
+      ],
+      "CONNECT": [
+        "contact"
+      ]
+    }
+  },
+  "sidebar": {
+    "header": "Quick Stats",
+    "stats": [
+      {
+        "label": "Projects Completed",
+        "value": "10"
+      },
+      {
+        "label": "Years of Experience",
+        "value": "5"
+      },
+      {
+        "label": "Skills Acquired",
+        "value": "15"
+      }
+    ],
+    "footer": "Made with ❤️ by Snehil"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "page_title": "Work Experience",
+  "page_subtitle": "My Professional journey in Data Engineering",
+  "gifs": {
+    "accenture": "./assets/GIFS/accenture.gif",
+    "exl": "./assets/GIFS/exl.gif"
+  },
+  "experience": [
+    {
+      "organization": "EXL - Healthcare Analytics",
+      "description": "Data Engineer specializing in Python automation for complex data extraction and standardization, transforming disparate Excel rosters into structured, analysis-ready formats to drive efficient downstream workflows.",
+      "gif_key": "exl",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "Openpyxl",
+        "Prompt Engineering",
+        "GCP"
+      ]
+    },
+    {
+      "organization": "Accenture - CIO(Marketing Analytics)",
+      "description": "Senior Data Engineer at Accenture building optimized data platforms on GCP. Expertise in pipeline orchestration (Airflow), performance optimization (Polars), and applying GENAI (Vertex AI) to solve complex data challenges.",
+      "gif_key": "accenture",
+      "tech_stack": [
+        "Data Engineering",
+        "Apache Spark",
+        "GCP",
+        "ELT",
+        "Apache Airflow",
+        "SQL"
+      ]
+    }
+  ],
+  "cta_section": {
+    "heading": "Ready for New Opportunities",
+    "subheading": "I'm passionate about solving complex data challenges and building scalable systems.",
+    "button_1_text": "📩 Get in Touch",
+    "button_2_text": "⬇️ Download Resume",
+    "resume_file": "./assets/Resume/Snehil_Upadhyay_Resume.pdf",
+    "resume_filename": "Snehil_Upadhyay_Resume.pdf"
+  }
+}
