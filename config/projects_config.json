@@ -1,0 +1,57 @@
+{
+  "page_title": "My Projects",
+  "page_subtitle": "A collection of projects where I experiment with new technologies and concepts.",
+  "lottie_animations": {
+    "concurrency": "./assets/lottie-logos/concurrency.json",
+    "ecommerce": "./assets/lottie-logos/ecommerce.json",
+    "rocket": "./assets/lottie-logos/Rocket_launch.json"
+  },
+  "github_profile": "https://github.com/SNEHILUPADHYAY007",
+  "projects": [
+    {
+      "project_name": "ForceOfConcurrency",
+      "description": "This repository demonstrates the use of Python's threading module to fetch data concurrently from the Star Wars API (SWAPI). The primary goal of the project is to compare different concurrency techniques, such as and multithreading, to optimize data retrieval and storage.",
+      "link": "https://github.com/SNEHILUPADHYAY007/ForceOfConcurrency",
+      "lottie_key": "concurrency",
+      "tech_stack": [
+        "Python",
+        "Threading",
+        "API",
+        "GIT",
+        "GITHUB",
+        "Jupyter Notebook"
+      ]
+    },
+    {
+      "project_name": "E-Commerce Data Pipeline",
+      "description": "This repository contains a set of Jupyter notebooks designed to facilitate the analysis of e-commerce data. The project is structured to include data preparation, database management, and a main execution pipeline using tools such as Polars, PyODBC, and others.",
+      "link": "https://github.com/SNEHILUPADHYAY007/ecommerce-data-pipeline",
+      "lottie_key": "ecommerce",
+      "tech_stack": [
+        "Python",
+        "OOPS",
+        "Polars",
+        "PyODBC",
+        "SQL Server",
+        "Data Modelling"
+      ]
+    },
+    {
+      "project_name": "Rocket-Launch-Images-Airflow",
+      "description": "The Rocket Launch Project is an example of an Apache Airflow-based ETL (Extract, Transform, Load) pipeline designed to pull data from a public API, process the data, and store it locally. The project demonstrates how to use Airflow's powerful scheduling and data pipeline capabilities within a Docker containerized environment.",
+      "link": "https://github.com/SNEHILUPADHYAY007/get-images-airflow",
+      "lottie_key": "rocket",
+      "tech_stack": [
+        "Python",
+        "Airflow",
+        "Docker"
+      ]
+    }
+  ],
+  "cta_section": {
+    "heading": "Want to Work Together?",
+    "subheading": "I'm always interested in new data engineering challenges and opportunities.",
+    "button_1_text": "📩 Contact Me",
+    "button_2_text": "🔗 GitHub Profile"
+  }
+}

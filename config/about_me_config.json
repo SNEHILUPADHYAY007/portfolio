@@ -1,0 +1,67 @@
+{
+  "profile": {
+    "name": "Snehil Upadhyay",
+    "title": "Data Engineer @EXL | Ex-Accenture | GCP",
+    "bio": "GCP Data Engineer with 4+ years of experience in designing, developing, and deploying data solutions on Google Cloud Platform.",
+    "profile_image": "assets/profile_pic.jpeg",
+    "profile_image_width": 230,
+    "location": "📍 Noida, India",
+    "availability": "✔️ Available for Opportunities"
+  },
+  "beliefs": [
+    {
+      "icon": "⏰",
+      "title": "Data-Driven Decisions",
+      "description": "I believe in letting data guide every decision, from architecture choices to business strategy."
+    },
+    {
+      "icon": "🔔",
+      "title": "Scalable Solutions",
+      "description": "Building systems that can grow with business needs while maintaining performance and reliability."
+    },
+    {
+      "icon": "👥",
+      "title": "Collaborative Innovation",
+      "description": "The best solutions come from diverse teams working together towards common goals."
+    },
+    {
+      "icon": "📖",
+      "title": "Continuous Learning",
+      "description": "Technology evolves rapidly, and I am committed to staying at the forefront of innovation."
+    }
+  ],
+  "achievements": [
+    {
+      "icon": "🏆",
+      "title": "Pinnacle Award",
+      "description": "High performer across the Delivery Unit (DU) – FY23"
+    },
+    {
+      "icon": "🌟",
+      "title": "Star of the Month",
+      "description": "Recognized across the Delivery Unit (DU) – July FY22"
+    },
+    {
+      "icon": "🎖️",
+      "title": "Leadership Recognitions",
+      "description": "25+ awards from Accenture Leadership, Business Stakeholders & Tech Architects."
+    }
+  ],
+  "fun_facts": {
+    "metric_1": {
+      "label": "Projects Completed",
+      "value": "dynamic",
+      "delta_label": "this year"
+    },
+    "metric_2": {
+      "label": "GitHub Contributions",
+      "value": "120+",
+      "delta": "31 this year"
+    },
+    "metric_3": {
+      "label": "Coffee Consumed",
+      "value": "100+",
+      "delta": "20 this month"
+    }
+  }
+}

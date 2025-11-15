@@ -1,3 +1,12 @@
+# Environment variables and sensitive data
+.env
+.env.local
+.env.*.local
+.streamlit/secrets.toml
+*.key
+*.pem
+credentials.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,210 @@
+{
+  "lottie_animations": {
+    "python": "./assets/lottie-logos/Python logo.json",
+    "sql": "./assets/lottie-logos/SQL.json",
+    "gcp": "./assets/lottie-logos/Google Logo.json",
+    "database": "./assets/lottie-logos/database.json",
+    "coding": "./assets/lottie-logos/Coding.json",
+    "scala": "./assets/lottie-logos/programming.json",
+    "polars": "./assets/lottie-logos/Polars.json",
+    "big_data": "./assets/lottie-logos/big_data.json",
+    "cloud": "./assets/lottie-logos/Google_Cloud.json",
+    "data_engineering": "./assets/lottie-logos/DE.json",
+    "orchestration": "./assets/lottie-logos/Automation.json",
+    "github": "./assets/lottie-logos/github.json",
+    "checklist": "./assets/lottie-logos/Checklist.json"
+  },
+  "asset_images": {
+    "bigquery": "./assets/google_logos/Bigquery.png",
+    "storage": "./assets/google_logos/Storage.png",
+    "composer": "./assets/google_logos/Composer.png",
+    "dataproc": "./assets/google_logos/Dataproc.png",
+    "cloud_functions": "./assets/google_logos/CloudFunctions.png",
+    "pubsub": "./assets/google_logos/PubSub.png",
+    "devops": "./assets/google_logos/devops.png",
+    "data_modelling": "./assets/google_logos/data_modelling.png",
+    "data_pipeline": "./assets/google_logos/data_pipeline.png",
+    "airflow": "./assets/google_logos/Apache_Airflow.png",
+    "git": "./assets/google_logos/git.png",
+    "github_icon": "./assets/google_logos/github.png",
+    "langchain": "./assets/google_logos/langchain.png",
+    "vertex_ai": "./assets/google_logos/vertex-ai.png",
+    "llm": "./assets/google_logos/llm.png",
+    "prompt": "./assets/google_logos/prompt.png",
+    "rag": "./assets/google_logos/rag.png",
+    "streamlit": "./assets/google_logos/streamlit.png"
+  },
+  "section_order": [
+    "coding",
+    "big_data",
+    "cloud",
+    "data_engineering",
+    "orchestration",
+    "github",
+    "checklist"
+  ],
+  "skills": {
+    "Programming Languages": {
+      "lottie_key": "coding",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "Expert",
+          "asset_key": "python"
+        },
+        {
+          "name": "SQL",
+          "level": "Expert",
+          "asset_key": "sql"
+        },
+        {
+          "name": "Scala",
+          "level": "Intermediate",
+          "asset_key": "scala"
+        }
+      ]
+    },
+    "Big Data Technologies": {
+      "lottie_key": "big_data",
+      "skills": [
+        {
+          "name": "Apache Spark",
+          "level": "Expert",
+          "asset_key": "database"
+        },
+        {
+          "name": "Polars",
+          "level": "Intermediate",
+          "asset_key": "polars"
+        }
+      ]
+    },
+    "Cloud Computing": {
+      "lottie_key": "cloud",
+      "skills": [
+        {
+          "name": "BigQuery",
+          "level": "Expert",
+          "asset_key": "bigquery"
+        },
+        {
+          "name": "Composer",
+          "level": "Intermediate",
+          "asset_key": "composer"
+        },
+        {
+          "name": "Dataproc",
+          "level": "Intermediate",
+          "asset_key": "dataproc"
+        },
+        {
+          "name": "Cloud Functions",
+          "level": "Intermediate",
+          "asset_key": "cloud_functions"
+        },
+        {
+          "name": "Pub/Sub",
+          "level": "Intermediate",
+          "asset_key": "pubsub"
+        },
+        {
+          "name": "Cloud Storage",
+          "level": "Intermediate",
+          "asset_key": "storage"
+        }
+      ]
+    },
+    "Data Engineering Tools": {
+      "lottie_key": "data_engineering",
+      "skills": [
+        {
+          "name": "Azure Devops",
+          "level": "Expert",
+          "asset_key": "devops"
+        },
+        {
+          "name": "Data Modelling",
+          "level": "Intermediate",
+          "asset_key": "data_modelling"
+        },
+        {
+          "name": "ETL/ELT Pipeline",
+          "level": "Intermediate",
+          "asset_key": "data_pipeline"
+        }
+      ]
+    },
+    "Workflow Orchestration": {
+      "lottie_key": "orchestration",
+      "skills": [
+        {
+          "name": "Apache Airflow",
+          "level": "Intermediate",
+          "asset_key": "airflow"
+        }
+      ]
+    },
+    "Version Control": {
+      "lottie_key": "github",
+      "skills": [
+        {
+          "name": "Git",
+          "level": "Expert",
+          "asset_key": "git"
+        },
+        {
+          "name": "GitHub",
+          "level": "Expert",
+          "asset_key": "github_icon"
+        }
+      ]
+    },
+    "Familiar With": {
+      "lottie_key": "checklist",
+      "skills": [
+        {
+          "name": "LangChain",
+          "level": "Beginner",
+          "asset_key": "langchain"
+        },
+        {
+          "name": "VERTEX AI",
+          "level": "Beginner",
+          "asset_key": "vertex_ai"
+        },
+        {
+          "name": "LLM Models",
+          "level": "Beginner",
+          "asset_key": "llm"
+        },
+        {
+          "name": "Prompt Engineering",
+          "level": "Beginner",
+          "asset_key": "prompt"
+        },
+        {
+          "name": "RAG",
+          "level": "Beginner",
+          "asset_key": "rag"
+        },
+        {
+          "name": "Streamlit",
+          "level": "Beginner",
+          "asset_key": "streamlit"
+        }
+      ]
+    }
+  },
+  "learning_focus": {
+    "section_1": {
+      "title": "AI/ML",
+      "description": "Exploring AI/ML concepts and their applications"
+    },
+    "section_2": {
+      "title": "Certifications",
+      "description": "Pursuing Google Cloud Professional Data Engineer certification"
+    }
+  },
+  "page_title": "Skills & Technologies",
+  "page_subtitle": "A comprehensive overview of my technical expertise across data engineering, cloud platforms, and modern development practices"
+}

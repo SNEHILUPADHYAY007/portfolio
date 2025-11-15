@@ -1,17 +1,15 @@
 import streamlit as st
 import time
+import json
+import os
+from utils import *
 
-# Utility functions
+# Load configuration
+config_path = os.path.join(os.path.dirname(__file__), "..", "config", "about_me_config.json")
+with open(config_path, "r", encoding="utf-8") as f:
+    config = json.load(f)
 
-# small_desc = """
-#     GCP Data Engineer with 4+ years of experience in designing, developing, and deploying data solutions on Google Cloud Platform.
-# """
-
-# def stream_data():
-#     for word in small_desc.split(" "):
-#         yield word + " "
-#         time.sleep(0.01)
-
+profile = config["profile"]
 
 @st.dialog("Contact Me")
 def contact_form():
@@ -20,49 +18,25 @@ def contact_form():
 col_1, col_2 = st.columns(2, gap = "small", vertical_alignment = "center")
 
 with col_1:
-    st.image("assets/profile_pic.jpeg", width=230)    
+    st.image(profile["profile_image"], width=profile["profile_image_width"])    
 
 with col_2:
-    st.title("Snehil Upadhyay", anchor=False)
-    st.write("Data Engineer @EXL | Ex-Accenture | GCP")
-    st.write("""
-        GCP Data Engineer with 4+ years of experience in designing, developing, and deploying data solutions on Google Cloud Platform. 
-    """)
+    st.title(profile["name"], anchor=False)
+    st.write(profile["title"])
+    st.write(profile["bio"])
     
     c_1, c_2 = st.columns([1,2], vertical_alignment="center")
     with c_1:
-        st.badge("📍 Noida, India")
+        st.badge(profile["location"])
     with c_2:
-        st.badge("✔️ Available for Opportunities", width = "stretch")
+        st.badge(profile["availability"], width = "stretch")
 
 st.divider()
 
-# Belive in Section
-
+# Beliefs Section
 st.markdown('<h2 style="text-align: center;">What I Believe In</h2>', unsafe_allow_html=True)
 
-beliefs = [
-    {
-        "icon": "⏰",
-        "title": "Data-Driven Decisions",
-        "desc": "I believe in letting data guide every decision, from architecture choices to business strategy."
-    },
-    {
-        "icon": "🔔",
-        "title": "Scalable Solutions",
-        "desc": "Building systems that can grow with business needs while maintaining performance and reliability."
-    },
-    {
-        "icon": "👥",
-        "title": "Collaborative Innovation",
-        "desc": "The best solutions come from diverse teams working together towards common goals."
-    },
-    {
-        "icon": "📖",
-        "title": "Continuous Learning",
-        "desc": "Technology evolves rapidly, and I am committed to staying at the forefront of innovation."
-    }
-]
+beliefs = config["beliefs"]
 
 # Two rows with two columns each
 for i in range(0, len(beliefs), 2):
@@ -88,7 +62,7 @@ for i in range(0, len(beliefs), 2):
                                 {belief['title']}
                             </div>
                             <p style="margin:5px 0 0; color:#444444; font-size:14px;">
-                                {belief['desc']}
+                                {belief['description']}
                             </p>
                         </div>
                     </div>
@@ -103,23 +77,7 @@ st.divider()
 
 st.markdown('<h2 style="text-align: center;">Key Achievements</h2>', unsafe_allow_html=True)
 
-achievements = [
-    {
-        "icon": "🏆",
-        "title": "Pinnacle Award",
-        "desc": "High performer across the Delivery Unit (DU) – FY23"
-    },
-    {
-        "icon": "🌟",
-        "title": "Star of the Month",
-        "desc": "Recognized across the Delivery Unit (DU) – July FY22"
-    },
-    {
-        "icon": "🎖️",
-        "title": "Leadership Recognitions",
-        "desc": "25+ awards from Accenture Leadership, Business Stakeholders & Tech Architects."
-    }
-]
+achievements = config["achievements"]
 
 # Display cards in a single column
 for ach in achievements:
@@ -154,7 +112,7 @@ for ach in achievements:
                         {ach['title']}
                     </div>
                     <p style="margin:5px 0 0; color:#444444; font-size:14px;">
-                        {ach['desc']}
+                        {ach['description']}
                     </p>
                 </div>
             </div>
@@ -166,12 +124,35 @@ for ach in achievements:
 
 st.divider()
 
-with st.container(border=True):
-    st.markdown('<h2 style="text-align: center;">Fun Facts About Me</h2>', unsafe_allow_html=True)
-    col_1, col_2, col_3 = st.columns(3, gap="large", vertical_alignment="center")
-    with col_1:
-        st.metric("Projects Completed", "10", delta="2 this year")
-    with col_2:
-        st.metric("GitHub Contributions", "120+", delta="31 this year")
-    with col_3:
-        st.metric("Coffee Consumed", "100+", delta="20 this month")
+# GitHub Stats Fragment - Loads in Background
+@st.fragment
+def display_github_metrics():
+    """Fragment to load GitHub metrics in background"""
+    with st.container(border=True):
+        st.markdown('<h2 style="text-align: center;">Fun Facts About Me</h2>', unsafe_allow_html=True)
+        col_1, col_2, col_3 = st.columns(3, gap="large", vertical_alignment="center")
+        
+        try:
+            github_stats = get_github_stats()
+            github_contributions = get_github_contributions()
+            
+            with col_1:
+                st.metric(
+                    f"Projects Completed", 
+                    str(github_stats.get("total_repos")), 
+                    delta=str(github_contributions.get("contributions_this_year")) + " this year"
+                )
+            with col_2:
+                st.metric("GitHub Contributions", "120+", delta="31 this year")
+            with col_3:
+                st.metric("Coffee Consumed", "100+", delta="20 this month")
+        except Exception as e:
+            with col_1:
+                st.metric("Projects Completed", "N/A", delta="...")
+            with col_2:
+                st.metric("GitHub Contributions", "120+", delta="31 this year")
+            with col_3:
+                st.metric("Coffee Consumed", "100+", delta="20 this month")
+
+# Call the fragment to display GitHub metrics
+display_github_metrics()
