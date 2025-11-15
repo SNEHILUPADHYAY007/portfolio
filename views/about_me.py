@@ -25,11 +25,27 @@ with col_2:
     st.write(profile["title"])
     st.write(profile["bio"])
     
-    c_1, c_2 = st.columns([1,2], vertical_alignment="center")
+    # Badges
+    c_1, c_2 = st.columns([1, 2], vertical_alignment="center")
     with c_1:
         st.badge(profile["location"])
     with c_2:
-        st.badge(profile["availability"], width = "stretch")
+        st.badge(profile["availability"], width="stretch")
+    
+    # Download Resume Button
+    try:
+        resume_path = os.path.join(os.path.dirname(__file__), "..", "assets", "Resume", "Snehil_Upadhyay_Resume.pdf")
+        if os.path.exists(resume_path):
+            with open(resume_path, "rb") as f:
+                st.download_button(
+                    label="⬇️ Download Resume",
+                    data=f,
+                    file_name="Snehil_Upadhyay_Resume.pdf",
+                    mime="application/pdf",
+                    use_container_width=True
+                )
+    except Exception as e:
+        pass
 
 st.divider()
 

@@ -30,11 +30,13 @@ for exp in experience_list:
     gif_path = gifs.get(gif_key)
     
     with st.container(border=True, gap="medium"):
-        col1, col2 = st.columns([1, 2], vertical_alignment="center")
-
-        with col1:
-            if gif_path:
-                st.image(render_gifs(gif_path))
+        # col1, col2 = st.columns([1, 2], vertical_alignment="center")
+        # 
+        # with col1:
+        #     if gif_path:
+        #         st.image(render_gifs(gif_path))
+        
+        col2 = st.columns(1)[0]
 
         with col2:
             st.subheader(exp["organization"])
