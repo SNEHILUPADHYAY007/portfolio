@@ -1,20 +1,66 @@
 import streamlit as st
-from streamlit_lottie import st_lottie
 import json
 import os
+import requests
+import re
 
 # Load configuration
 config_path = os.path.join(os.path.dirname(__file__), "..", "config", "work_experience_config.json")
 with open(config_path, "r", encoding="utf-8") as f:
     config = json.load(f)
 
-def render_gifs(URL):
-    with open(URL, "rb") as f:
-        return f.read()
+# Load contact config for webhook
+contact_config_path = os.path.join(os.path.dirname(__file__), "..", "config", "contact_config.json")
+with open(contact_config_path, "r", encoding="utf-8") as f:
+    contact_config = json.load(f)
+
+WEBHOOK_URL = contact_config["webhook_url"]
+
+def is_valid_email(email):
+    email_pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+    return re.match(email_pattern, email) is not None
     
-@st.dialog("Contact Me")
+@st.dialog("Get In Touch")
 def contact_form():
-    st.text_input("First Name") 
+    contact_form_config = contact_config["contact_form"]
+    
+    with st.form("work_experience_contact_form"):
+        name = st.text_input("Name", placeholder=contact_form_config["placeholders"]["name"])
+        email = st.text_input("Email", placeholder=contact_form_config["placeholders"]["email"])
+        message = st.text_area("Message", placeholder=contact_form_config["placeholders"]["message"], height=150)
+        submitted = st.form_submit_button(contact_form_config["submit_button_text"])
+        
+        if submitted:   
+            errors = contact_form_config["validation_errors"]
+            
+            if not WEBHOOK_URL:
+                st.error(errors["webhook_not_set"], icon="📧")
+                return
+
+            if not name:
+                st.error(errors["no_name"], icon="🧑")
+                return
+
+            if not email:
+                st.error(errors["no_email"], icon="📨")
+                return
+
+            if not is_valid_email(email):
+                st.error(errors["invalid_email"], icon="📧")
+                return
+
+            if not message:
+                st.error(errors["no_message"], icon="💬")
+                return
+
+            # Prepare the data payload and send it to the specified webhook URL
+            data = {"email": email, "name": name, "message": message}
+            response = requests.post(WEBHOOK_URL, json=data, headers={"Content-Type": "application/json"})
+
+            if response.status_code == 200:
+                st.success(contact_form_config["success_message"], icon="🚀")
+            else:
+                st.error(contact_form_config["error_message"], icon="😨") 
 
 # Top Section
 with st.container():
@@ -30,14 +76,15 @@ for exp in experience_list:
     gif_path = gifs.get(gif_key)
     
     with st.container(border=True, gap="medium"):
-        # col1, col2 = st.columns([1, 2], vertical_alignment="center")
-        # 
-        # with col1:
-        #     if gif_path:
-        #         st.image(render_gifs(gif_path))
-        
-        col2 = st.columns(1)[0]
+        col1, col2 = st.columns([1, 2], vertical_alignment="center")
 
+        with col1:
+            if gif_path:
+                try:
+                    st.image(gif_path)
+                except Exception as e:
+                    st.warning(f"Could not load image for {gif_key}")
+        
         with col2:
             st.subheader(exp["organization"])
             st.write(exp["description"])
