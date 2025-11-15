@@ -15,7 +15,7 @@
     "checklist": "./assets/lottie-logos/Checklist.json"
   },
   "asset_images": {
-    "bigquery": "./assets/google_logos/Bigquery.png",
+    "bigquery": "./assets/google_logos/BigQuery.png",
     "storage": "./assets/google_logos/Storage.png",
     "composer": "./assets/google_logos/Composer.png",
     "dataproc": "./assets/google_logos/Dataproc.png",

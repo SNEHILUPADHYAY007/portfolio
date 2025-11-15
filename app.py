@@ -8,11 +8,6 @@ config_path = os.path.join(os.path.dirname(__file__), "config", "app_config.json
 with open(config_path, "r", encoding="utf-8") as f:
     config = json.load(f)
 
-# Displaying the Search feature across all pages
-prompt = st.text_input(config["app"]["search_placeholder"])
-if prompt:  
-    st.write(f"You entered: {prompt}")
-
 # Page Setup - Load pages from config
 app_config = config["navigation"]
 pages_config = app_config["pages"]
